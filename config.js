@@ -11,52 +11,52 @@ window.YKF_CONFIG = {
 
   const NAME_POOLS = {
     arabic:{
-      first:['Ahmed','Omar','Youssef','Sara','Mariam','Lina','Hassan','Nour','Khalid','Aya','Rania','Samir','Amal','Karim','Huda','Tariq','Salma','Imane','Bilal','Leila','Hamza','Dina','Adel','Farah','Nadia','Rami','Yasmin','Anas','Mona','Fadi'],
-      last:['Mansour','Khalil','Rahman','Saleh','Nasser','Hamdan','Farouk','Jaber','Mahmoud','Khatib','Darwish','Sabbagh','Najjar','Hakim','Bakri','Qasim','Hariri','Zaki','Fahmi','Abbas','Masri','Habib','Rashid','Fares','Amin','Saad','Younes','Haddad','Awad','Nasr']
+      first:['Ahmed','Omar','Youssef','Sara','Mariam','Lina','Hassan','Nour','Khalid','Aya','Rania','Samir','Amal','Karim','Huda','Tariq','Farah','Rami'],
+      last:['Mansour','Khalil','Saleh','Nasser','Hamdan','Farouk','Jaber','Mahmoud','Khatib','Darwish','Sabbagh','Najjar','Hakim','Qasim','Hariri','Masri','Habib','Rashid']
     },
     maghreb:{
-      first:['Yassine','Imane','Mehdi','Salma','Anas','Sara','Othmane','Aya','Hamza','Nadia','Amine','Lina','Ayoub','Meryem','Zakaria','Hajar','Karim','Soukaina','Bilal','Leila','Reda','Ikram','Youssef','Ghita','Adil','Sanae','Ismail','Nour','Rachid','Asmae'],
-      last:['El Amrani','Alaoui','Bensaid','Benali','Idrissi','Mansouri','Fassi','Bennani','Chafai','Belkadi','Saidi','Lamrani','Berrada','Ouazzani','El Fassi','Cherkaoui','Benjelloun','Ait Lahcen','Amrani','Tazi','Bouzid','Jaziri','Trabelsi','Ben Salah','Haddad','Mekki','Brahimi','Bensaad','Khelifi','Ouali']
+      first:['Yassine','Imane','Mehdi','Salma','Anas','Sara','Othmane','Aya','Hamza','Nadia','Amine','Lina','Ayoub','Meryem','Zakaria','Hajar','Reda','Ghita'],
+      last:['El Amrani','Alaoui','Bensaid','Benali','Idrissi','Mansouri','Fassi','Bennani','Chafai','Belkadi','Berrada','Ouazzani','Cherkaoui','Benjelloun','Tazi','Bouzid','Jaziri','Trabelsi']
     },
     westafrica:{
-      first:['Amadou','Fatou','Amina','Moussa','Mariama','Mamadou','Ibrahima','Khadija','Ousmane','Aminata','Cheikh','Binta','Idrissa','Adama','Coumba','Seydou','Fanta','Souleymane','Awa','Abdoulaye','Ndeye','Mariam','Ismaila','Hawa','Bakary','Ramata','Modou','Safiatou','Samba','Kadiatou'],
-      last:['Diallo','Traore','Ba','Ndiaye','Cisse','Keita','Sow','Camara','Toure','Sy','Diop','Barry','Bah','Konate','Sarr','Kane','Coulibaly','Fofana','Jallow','Sanogo','Conte','Kone','Diarra','Sidibe','Fall','Gueye','Dabo','Balde','Kebe','Soumare']
+      first:['Amadou','Fatou','Amina','Moussa','Mariama','Mamadou','Ibrahima','Khadija','Ousmane','Aminata','Cheikh','Binta','Idrissa','Adama','Coumba','Seydou','Fanta','Souleymane'],
+      last:['Diallo','Traore','Ba','Ndiaye','Cisse','Keita','Sow','Camara','Toure','Sy','Diop','Barry','Konate','Sarr','Kane','Coulibaly','Fofana','Gueye']
     },
     eastafrica:{
-      first:['Abdi','Amina','Hassan','Hodan','Yusuf','Nimo','Mohamed','Sahra','Ali','Fadumo','Ismail','Maryan','Omar','Hawa','Bashir','Rahma','Jama','Ayan','Mustafa','Nasra','Abdullahi','Samira','Ibrahim','Halima','Ahmed','Zahra','Khalid','Asha','Farah','Nura'],
-      last:['Nur','Warsame','Osman','Aden','Farah','Ahmed','Ali','Hassan','Abdi','Mohamed','Noor','Ismail','Yusuf','Ibrahim','Jama','Omar','Hussein','Abdallah','Sharif','Said','Salim','Abbas','Musa','Kassim','Hassanali','Dahir','Awale','Roble','Mahad','Yasin']
+      first:['Abdi','Amina','Hassan','Hodan','Yusuf','Nimo','Mohamed','Sahra','Ali','Fadumo','Ismail','Maryan','Omar','Hawa','Bashir','Rahma','Jama','Ayan'],
+      last:['Nur','Warsame','Osman','Aden','Farah','Ahmed','Ali','Hassan','Abdi','Mohamed','Noor','Ismail','Yusuf','Ibrahim','Jama','Hussein','Dahir','Awale']
     },
     centralasia:{
-      first:['Amina','Timur','Aziz','Dilnoza','Bekzod','Madina','Rustam','Sabina','Akmal','Zarina','Kamol','Nigina','Farid','Lola','Eldar','Leyla','Samir','Nargiz','Nurlan','Dana','Alisher','Gulnara','Azamat','Malika','Jasur','Aigerim','Daniyar','Shahnoza','Bekzat','Saida'],
-      last:['Karimov','Rahmonov','Ismailov','Yusupov','Nazarov','Kadyrov','Tursunov','Saidov','Mamatov','Rakhimov','Akhmedov','Bekov','Sultanov','Olimov','Rasulov','Niyazov','Kasimov','Aliev','Sharipov','Kurbanov','Usmanov','Abdullaev','Ibragimov','Mirzaev','Sadykov','Jalilov','Aminov','Askarov','Khalilov','Davlatov']
+      first:['Amina','Timur','Aziz','Dilnoza','Bekzod','Madina','Rustam','Sabina','Akmal','Zarina','Kamol','Nigina','Farid','Lola','Eldar','Leyla','Nurlan','Aigerim'],
+      last:['Karimov','Rahmonov','Ismailov','Yusupov','Nazarov','Kadyrov','Tursunov','Saidov','Mamatov','Rakhimov','Akhmedov','Sultanov','Rasulov','Kasimov','Mirzaev','Sadykov','Askarov','Davlatov']
     },
     southasia:{
-      first:['Ayesha','Zain','Imran','Sana','Farhan','Nadia','Rafi','Samira','Kamal','Arif','Nabila','Rahim','Farzana','Tariq','Mahmud','Saira','Omar','Javed','Hira','Bilal','Fahim','Mariam','Adnan','Sumaiya','Hasan','Rina','Shahid','Nusrat','Salman','Anika'],
-      last:['Khan','Rahman','Ahmed','Hussain','Karim','Ali','Siddiqui','Iqbal','Chowdhury','Hasan','Malik','Qureshi','Mirza','Mahmood','Rashid','Akhtar','Haque','Kabir','Uddin','Islam','Sheikh','Farooq','Ansari','Nawaz','Jamil','Aziz','Rehman','Latif','Bashir','Saleem']
+      first:['Ayesha','Zain','Imran','Sana','Farhan','Nadia','Rafi','Samira','Kamal','Arif','Nabila','Rahim','Farzana','Tariq','Mahmud','Saira','Hira','Anika'],
+      last:['Khan','Rahman','Ahmed','Hussain','Karim','Ali','Siddiqui','Iqbal','Chowdhury','Hasan','Malik','Qureshi','Mirza','Mahmood','Rashid','Akhtar','Haque','Kabir']
     },
     southeastasia:{
-      first:['Ahmad','Siti','Nur','Rizky','Putri','Faisal','Aisyah','Farhan','Hana','Iqbal','Dewi','Reza','Amir','Nadia','Firdaus','Liyana','Hakim','Nabila','Arif','Syafiq','Aiman','Alya','Rafiq','Zara','Hafiz','Maya','Rizal','Amira','Ilham','Sofia'],
-      last:['Hidayat','Putra','Pratama','Rahman','Ismail','Abdullah','Hamzah','Yusuf','Noor','Hassan','Ibrahim','Karim','Mahmud','Latif','Basri','Hakim','Aziz','Fauzi','Nasir','Idris','Salim','Harun','Anwar','Jamal','Ridwan','Sulaiman','Arifin','Daud','Kamal','Zainal']
+      first:['Ahmad','Siti','Nur','Rizky','Putri','Faisal','Aisyah','Farhan','Hana','Iqbal','Dewi','Reza','Amir','Nadia','Firdaus','Liyana','Alya','Rafiq'],
+      last:['Hidayat','Putra','Pratama','Rahman','Ismail','Abdullah','Hamzah','Yusuf','Noor','Hassan','Ibrahim','Karim','Latif','Basri','Fauzi','Nasir','Ridwan','Sulaiman']
     },
     persian:{
-      first:['Amir','Sara','Reza','Niloofar','Arman','Leila','Mehdi','Shirin','Kian','Neda','Farid','Yasmin','Ali','Parisa','Navid','Maryam','Pouya','Roya','Sina','Mina','Arash','Darya','Omid','Arezoo','Kamran','Nazanin','Milad','Sahar','Behzad','Mahnaz'],
-      last:['Ahmadi','Karimi','Hosseini','Rahimi','Moradi','Jafari','Ebrahimi','Mohammadi','Rezaei','Kazemi','Abbasi','Sadeghi','Ghasemi','Najafi','Mahmoudi','Nouri','Safari','Soleimani','Akbari','Asadi','Mousavi','Rostami','Kiani','Mirzaei','Fazeli','Sharifi','Ramezani','Salehi','Farhadi','Yazdani']
+      first:['Amir','Sara','Reza','Niloofar','Arman','Leila','Mehdi','Shirin','Kian','Neda','Farid','Yasmin','Ali','Parisa','Navid','Maryam','Sina','Nazanin'],
+      last:['Ahmadi','Karimi','Hosseini','Rahimi','Moradi','Jafari','Ebrahimi','Mohammadi','Rezaei','Kazemi','Abbasi','Sadeghi','Ghasemi','Najafi','Nouri','Rostami','Mirzaei','Yazdani']
     },
     turkish:{
-      first:['Emre','Elif','Kerem','Zeynep','Can','Ayşe','Mert','Selin','Burak','Ece','Deniz','Hakan','Melis','Onur','Derya','Cem','İrem','Tolga','Aslı','Berk','Seda','Kaan','Buse','Umut','Esra','Serkan','Naz','Arda','Pelin','Ozan'],
-      last:['Yılmaz','Kaya','Demir','Şahin','Çelik','Aydın','Arslan','Koç','Kurt','Özdemir','Aksoy','Güneş','Polat','Doğan','Kılıç','Yıldız','Kaplan','Tekin','Öztürk','Avcı','Eren','Bulut','Taş','Keskin','Bozkurt','Acar','Karaca','Turan','Şimşek','Özkan']
+      first:['Emre','Elif','Kerem','Zeynep','Can','Ayşe','Mert','Selin','Burak','Ece','Deniz','Hakan','Melis','Onur','Derya','Cem','İrem','Arda'],
+      last:['Yılmaz','Kaya','Demir','Şahin','Çelik','Aydın','Arslan','Koç','Kurt','Özdemir','Aksoy','Güneş','Polat','Doğan','Kılıç','Yıldız','Öztürk','Karaca']
     },
     caucasus:{
-      first:['Ali','Aysel','Murad','Leyla','Rashad','Nigar','Kamran','Gunel','Orkhan','Sabina','Farid','Narmin','Tural','Lala','Emin','Aynur','Samir','Zahra','Ilgar','Sevda','Anar','Naila','Rauf','Aida','Elvin','Fidan','Vugar','Shahla','Nijat','Arzu'],
-      last:['Mammadov','Aliyev','Hasanov','Huseynov','Karimov','Ismayilov','Quliyev','Abbasov','Rzayev','Jafarov','Suleymanov','Aslanov','Mahmudov','Nabiyev','Rahimov','Akhundov','Safarov','Mustafayev','Agayev','Mirzayev','Rustamov','Bayramov','Yusifov','Tagiyev','Salmanov','Valiyev','Hajiyev','Amirov','Nasibov','Ibrahimov']
+      first:['Ali','Aysel','Murad','Leyla','Rashad','Nigar','Kamran','Gunel','Orkhan','Sabina','Farid','Narmin','Tural','Lala','Emin','Aynur','Elvin','Fidan'],
+      last:['Mammadov','Aliyev','Hasanov','Huseynov','Karimov','Ismayilov','Quliyev','Abbasov','Rzayev','Jafarov','Suleymanov','Aslanov','Rahimov','Safarov','Mustafayev','Agayev','Hajiyev','Nasibov']
     },
     centralafrica:{
-      first:['Jean','Amina','Moussa','Fatima','Idriss','Grace','Samuel','Nadine','Ibrahim','Mariam','Patrice','Awa','Karim','Esther','Mahamat','Clarisse','Ali','Joseph','Fadila','Yannick','Sonia','Abakar','Mireille','Oumar','Brice','Hawa','Nabil','Sandrine','Adam','Leila'],
-      last:['Mba','Ondo','Essono','Ngoma','Diallo','Abakar','Mahamat','Adam','Njoya','Mbida','Etame','Biya','Ndi','Manga','Owona','Moussa','Garba','Bello','Sani','Hamidou','Nguema','Obiang','Minko','Ndong','Bemba','Moukoko','Issa','Maidou','Salif','Koumba']
+      first:['Jean','Amina','Moussa','Fatima','Idriss','Grace','Samuel','Nadine','Ibrahim','Mariam','Patrice','Awa','Karim','Esther','Mahamat','Clarisse','Oumar','Sandrine'],
+      last:['Mba','Ondo','Essono','Ngoma','Diallo','Abakar','Mahamat','Adam','Njoya','Mbida','Etame','Biya','Manga','Owona','Nguema','Obiang','Ndong','Koumba']
     },
     caribbean:{
-      first:['Aaliyah','Jamal','Priya','Imran','Nadia','Ravi','Farah','Kareem','Maya','Daniel','Aisha','Samuel','Rohan','Leila','Zain','Anisa','Omar','Shanice','Adrian','Nisha','Malik','Sara','Devon','Amir','Tanya','Rahim','Layla','Kevin','Safiya','Ryan'],
-      last:['Khan','Singh','Persaud','Ali','Mohamed','Ramdin','Williams','Rahman','Hussain','Jones','Boodram','Samaroo','Joseph','Mohammed','Baksh','Thomas','Kissoon','Ramdass','Lewis','Khanal','Grant','Charles','Bissoon','Adams','Ramkissoon','Davis','Noel','Hassan','Roopnarine','Mendes']
+      first:['Aaliyah','Jamal','Priya','Imran','Nadia','Ravi','Farah','Kareem','Maya','Daniel','Aisha','Samuel','Rohan','Leila','Zain','Anisa','Shanice','Adrian'],
+      last:['Khan','Singh','Persaud','Ali','Mohamed','Ramdin','Williams','Rahman','Hussain','Jones','Boodram','Samaroo','Joseph','Baksh','Thomas','Lewis','Charles','Mendes']
     }
   };
 
@@ -71,11 +71,32 @@ window.YKF_CONFIG = {
     IR:'persian',TR:'turkish',AZ:'caucasus',SR:'caribbean',GY:'caribbean'
   };
 
-  function demoName(code,j,idx){
-    const pool=NAME_POOLS[POOL_BY_CODE[code]||'arabic'];
-    const first=pool.first[(j+idx*3)%pool.first.length];
-    const last=pool.last[(Math.floor(j/pool.first.length)+idx*7)%pool.last.length];
-    return first+' '+last;
+  const usedNames = new Set();
+  const poolCounters = Object.create(null);
+
+  function demoName(code){
+    const key=POOL_BY_CODE[code]||'arabic';
+    const pool=NAME_POOLS[key];
+    const F=pool.first.length,L=pool.last.length;
+    let n=poolCounters[key]||0;
+    const capacity=F*F*L;
+    while(n<capacity){
+      const a=n%F;
+      let b=Math.floor(n/F)%F;
+      const c=Math.floor(n/(F*F))%L;
+      n++;
+      if(b===a) b=(b+1)%F;
+      const name=pool.first[a]+' '+pool.first[b]+' '+pool.last[c];
+      if(!usedNames.has(name)){
+        usedNames.add(name);
+        poolCounters[key]=n;
+        return name;
+      }
+    }
+    const fallback=pool.first[n%F]+' '+pool.last[n%L]+' '+String(n+1);
+    poolCounters[key]=n+1;
+    usedNames.add(fallback);
+    return fallback;
   }
 
   function buildDemoParticipants(){
@@ -92,10 +113,12 @@ window.YKF_CONFIG = {
       for(let j=0;j<counts[idx];j++,serial++){
         people.push({
           id:serial-DEMO_TOTAL-1,
-          name:demoName(c.code,j,idx),
+          name:demoName(c.code),
           country_code:c.code,
           country_name:c.name,
-          flag:'',lat:c.lat,lon:c.lon,
+          flag:'',
+          lat:c.lat,
+          lon:c.lon,
           created_at:'2026-01-01T00:00:00Z',
           __demo:true
         });
@@ -106,6 +129,7 @@ window.YKF_CONFIG = {
 
   const demoParticipants=buildDemoParticipants();
   const nativeFetch=window.fetch.bind(window);
+
   window.fetch=async function(input,init){
     const url=typeof input==='string'?input:(input&&input.url)||'';
     const method=String((init&&init.method)||(input&&input.method)||'GET').toUpperCase();
@@ -115,9 +139,12 @@ window.YKF_CONFIG = {
       const live=await response.clone().json();
       if(!Array.isArray(live)) return response;
       const combined=demoParticipants.concat(live);
-      const h=new Headers(response.headers);h.set('content-type','application/json; charset=utf-8');
+      const h=new Headers(response.headers);
+      h.set('content-type','application/json; charset=utf-8');
       return new Response(JSON.stringify(combined),{status:response.status,statusText:response.statusText,headers:h});
-    }catch(_){return response;}
+    }catch(_){
+      return response;
+    }
   };
 
   window.addEventListener('DOMContentLoaded',()=>{
