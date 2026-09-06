@@ -23,12 +23,12 @@ header{height:70px;padding:0 30px;display:flex;align-items:center;gap:16px;borde
 .hero{position:absolute;left:30px;top:24px;z-index:4}.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:850}.hero h1{font-size:39px;line-height:1.03;letter-spacing:-.04em;margin:8px 0 5px}.hero p{margin:0;color:var(--muted);font-size:13px}
 .mapWrap{position:absolute;left:22px;right:22px;top:100px;bottom:104px;display:grid;place-items:center}.mapSvg{width:100%;height:100%}
 .land{fill:#173246;stroke:#365a70;stroke-width:.5}.eventTerritory{fill:#173246;stroke:#365a70;stroke-width:.5;vector-effect:non-scaling-stroke}.graticule{fill:none;stroke:rgba(125,153,173,.08);stroke-width:.6}
-.countryMarker{cursor:pointer}.countryMarker .markerDot{fill:var(--blue);stroke:white;stroke-width:1.5;transition:r .14s ease,filter .14s ease}.countryMarker:hover .markerDot{filter:drop-shadow(0 0 6px rgba(86,204,242,.85))}.countryMarker .markerFlag{font-size:12px;fill:#fff;font-weight:900;paint-order:stroke;stroke:#04111c;stroke-width:3px;pointer-events:none}.countryMarker .markerCountBg{fill:#06101f;stroke:#8bc9e3;stroke-width:.75}.countryMarker .markerCount{fill:#fff;font-size:8px;font-weight:900;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.countryMarker{cursor:pointer}.countryMarker .markerDot{fill:var(--blue);stroke:white;stroke-width:1.5;transition:r .14s ease,filter .14s ease}.countryMarker:hover .markerDot{filter:drop-shadow(0 0 7px rgba(86,204,242,.95))}.countryMarker .markerFlag{font-size:19px;text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:#04111c;stroke-width:3.6px;pointer-events:none}.countryMarker .markerCountBg{fill:#06101f;stroke:#8bc9e3;stroke-width:.9}.countryMarker .markerCount{fill:#fff;font-size:8px;font-weight:900;text-anchor:middle;dominant-baseline:central;pointer-events:none}
 .bottom{position:absolute;left:30px;right:30px;bottom:22px;display:flex;gap:12px;align-items:center}.stat{min-width:145px;padding:11px 16px;border:1px solid var(--line);background:rgba(13,33,48,.72);border-radius:15px}.stat strong{font-size:25px}.stat span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em}.latestMini{margin-left:auto;color:var(--muted);font-size:12px;text-align:right;max-width:360px}.latestMini b{color:var(--ink)}
 .side{display:flex;flex-direction:column;gap:14px;min-width:0}.card{border:1px solid var(--line);background:rgba(13,33,48,.9);border-radius:24px}.qrCard{padding:20px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);font-weight:850}.qrCard h2{font-size:23px;line-height:1.08;margin:7px 0 16px}.qrBox{background:#fff;border-radius:18px;padding:10px;display:grid;place-items:center;aspect-ratio:1;max-height:250px}.qrBox img,.qrBox canvas{max-width:100%;max-height:100%}.joinUrl{font-size:10px;color:#9ab2c2;margin-top:10px;word-break:break-all}
 .latestCard{padding:18px;display:flex;flex-direction:column;min-height:166px}.person{margin-top:15px;display:grid;grid-template-columns:54px minmax(0,1fr);gap:13px;align-items:center}.flag{width:54px;height:54px;border-radius:15px;background:#112b3d;border:1px solid var(--line);display:grid;place-items:center;font-size:30px}.pname{font-size:21px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pcountry{font-size:12px;color:var(--blue);margin-top:3px}.pnum{margin-top:auto;padding-top:13px;color:var(--muted);font-size:11px}.pnum strong{color:var(--orange)}
-.joinToast{position:absolute;right:24px;top:24px;z-index:12;width:min(310px,calc(100% - 48px));padding:15px 16px;background:rgba(7,24,37,.97);border:1px solid rgba(124,245,200,.45);border-radius:18px;box-shadow:0 16px 45px rgba(0,0,0,.42);opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:opacity .22s ease,transform .22s ease}.joinToast.show{opacity:1;transform:translateY(0) scale(1)}.joinToastTop{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);font-weight:900;margin-bottom:10px}.joinToastBody{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;align-items:center}.joinToastFlag{height:48px;border-radius:13px;border:1px solid var(--line);background:#112b3d;display:grid;place-items:center;font-size:28px}.joinToastName{font-size:18px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.joinToastMeta{font-size:11px;color:var(--blue);margin-top:3px}.joinToastNumber{font-size:10px;color:var(--orange);font-weight:850;margin-top:4px;letter-spacing:.07em}
-.countryPopup{position:absolute;z-index:14;width:270px;max-width:calc(100% - 24px);background:rgba(5,19,30,.98);border:1px solid rgba(86,204,242,.45);border-radius:17px;box-shadow:0 18px 48px rgba(0,0,0,.52);padding:14px;display:none}.countryPopup.show{display:block}.countryPopupHead{display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--line)}.countryPopupFlag{width:42px;height:42px;border-radius:11px;background:#112b3d;border:1px solid var(--line);display:grid;place-items:center;font-size:25px}.countryPopupName{font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.countryPopupCount{color:var(--blue);font-size:10px;margin-top:3px;font-weight:800;letter-spacing:.05em}.countryPopupList{max-height:180px;overflow-y:auto;margin-top:8px;padding-right:3px}.countryPopupList::-webkit-scrollbar{width:5px}.countryPopupList::-webkit-scrollbar-thumb{background:#365a70;border-radius:10px}.countryPerson{display:flex;align-items:center;gap:9px;padding:8px 5px;border-bottom:1px solid rgba(140,190,220,.1)}.countryPerson:last-child{border-bottom:0}.countryPersonNum{width:28px;height:28px;flex:0 0 28px;border-radius:9px;background:#102b3d;display:grid;place-items:center;color:var(--orange);font-size:9px;font-weight:900}.countryPersonName{min-width:0;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.countryPopupHint{font-size:9px;color:var(--muted);margin-top:8px;text-align:center}
+.joinToast{position:absolute;left:50%;top:50%;z-index:16;width:min(340px,calc(100% - 48px));padding:17px 18px;background:rgba(7,24,37,.98);border:1px solid rgba(124,245,200,.5);border-radius:19px;box-shadow:0 20px 58px rgba(0,0,0,.58);opacity:0;transform:translate(-50%,-50%) scale(.94);pointer-events:none;transition:opacity .22s ease,transform .22s ease}.joinToast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}.joinToastTop{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);font-weight:900;margin-bottom:11px;text-align:center}.joinToastBody{display:grid;grid-template-columns:54px minmax(0,1fr);gap:13px;align-items:center}.joinToastFlag{height:54px;border-radius:14px;border:1px solid var(--line);background:#112b3d;display:grid;place-items:center;font-size:31px}.joinToastName{font-size:19px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.joinToastMeta{font-size:12px;color:var(--blue);margin-top:3px}.joinToastNumber{font-size:10px;color:var(--orange);font-weight:850;margin-top:4px;letter-spacing:.07em}
+.countryPopup{position:absolute;left:50%;top:50%;z-index:18;width:300px;max-width:calc(100% - 32px);background:rgba(5,19,30,.99);border:1px solid rgba(86,204,242,.48);border-radius:18px;box-shadow:0 20px 58px rgba(0,0,0,.6);padding:15px;display:none;transform:translate(-50%,-50%)}.countryPopup.show{display:block}.countryPopupHead{display:grid;grid-template-columns:48px minmax(0,1fr);gap:11px;align-items:center;padding-bottom:11px;border-bottom:1px solid var(--line)}.countryPopupFlag{width:48px;height:48px;border-radius:12px;background:#112b3d;border:1px solid var(--line);display:grid;place-items:center;font-size:29px}.countryPopupName{font-size:17px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.countryPopupCount{color:var(--blue);font-size:10px;margin-top:3px;font-weight:800;letter-spacing:.05em}.countryPopupList{max-height:190px;overflow-y:auto;margin-top:8px;padding-right:3px}.countryPopupList::-webkit-scrollbar{width:5px}.countryPopupList::-webkit-scrollbar-thumb{background:#365a70;border-radius:10px}.countryPerson{display:flex;align-items:center;gap:9px;padding:8px 5px;border-bottom:1px solid rgba(140,190,220,.1)}.countryPerson:last-child{border-bottom:0}.countryPersonNum{width:30px;height:30px;flex:0 0 30px;border-radius:9px;background:#102b3d;display:grid;place-items:center;color:var(--orange);font-size:9px;font-weight:900}.countryPersonName{min-width:0;font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.countryPopupHint{font-size:9px;color:var(--muted);margin-top:9px;text-align:center}
 @media(max-width:1050px){.main{grid-template-columns:1fr 300px}.hero h1{font-size:31px}}
 </style>
 </head>
@@ -62,7 +62,6 @@ const path=d3.geoPath(projection);
 svg.append('path').datum(d3.geoGraticule10()).attr('class','graticule').attr('d',path);
 const markerLayer=svg.append('g');
 
-const mapPanel=document.getElementById('mapPanel');
 const countryPopup=document.getElementById('countryPopup');
 const joinToast=document.getElementById('joinToast');
 let latestPeople=[];
@@ -94,6 +93,7 @@ function countryGroups(people){
 }
 
 function showJoinToast(person,number){
+  closeCountryPopup();
   document.getElementById('joinToastFlag').textContent=person.flag||'🌍';
   document.getElementById('joinToastName').textContent=person.name;
   document.getElementById('joinToastMeta').textContent=person.country_name;
@@ -109,34 +109,9 @@ function closeCountryPopup(){
   countryPopup.classList.remove('show');
 }
 
-function svgPointToPanel(q){
-  const svgRect=svg.node().getBoundingClientRect();
-  const panelRect=mapPanel.getBoundingClientRect();
-  const scale=Math.min(svgRect.width/1000,svgRect.height/500);
-  const offsetX=(svgRect.width-1000*scale)/2;
-  const offsetY=(svgRect.height-500*scale)/2;
-  return {
-    x:svgRect.left-panelRect.left+offsetX+q[0]*scale,
-    y:svgRect.top-panelRect.top+offsetY+q[1]*scale
-  };
-}
-
-function positionCountryPopup(group){
-  const q=projection([group.lon,group.lat]);
-  if(!q) return;
-  const p=svgPointToPanel(q);
-  const gap=14;
-  let left=p.x+gap;
-  let top=p.y-countryPopup.offsetHeight/2;
-  const pad=12;
-  if(left+countryPopup.offsetWidth>mapPanel.clientWidth-pad) left=p.x-countryPopup.offsetWidth-gap;
-  left=Math.max(pad,Math.min(left,mapPanel.clientWidth-countryPopup.offsetWidth-pad));
-  top=Math.max(pad,Math.min(top,mapPanel.clientHeight-countryPopup.offsetHeight-pad));
-  countryPopup.style.left=left+'px';
-  countryPopup.style.top=top+'px';
-}
-
 function renderCountryPopup(group){
+  clearTimeout(toastTimer);
+  joinToast.classList.remove('show');
   activeCountryCode=group.code;
   document.getElementById('countryPopupFlag').textContent=group.flag||'🌍';
   document.getElementById('countryPopupName').textContent=group.country;
@@ -156,17 +131,16 @@ function renderCountryPopup(group){
     list.appendChild(row);
   });
   countryPopup.classList.add('show');
-  requestAnimationFrame(()=>positionCountryPopup(group));
 }
 
 function updateCountryMarkers(people){
   const groups=countryGroups(people);
   const markers=markerLayer.selectAll('g.countryMarker').data(groups,d=>d.code);
   const enter=markers.enter().append('g').attr('class','countryMarker').attr('role','button').attr('tabindex',0);
-  enter.append('circle').attr('class','markerDot').attr('r',7);
-  enter.append('text').attr('class','markerFlag').attr('x',10).attr('y',4);
-  enter.append('circle').attr('class','markerCountBg').attr('cx',-7).attr('cy',-7).attr('r',7.5);
-  enter.append('text').attr('class','markerCount').attr('x',-7).attr('y',-7);
+  enter.append('circle').attr('class','markerDot').attr('r',8);
+  enter.append('text').attr('class','markerFlag').attr('x',0).attr('y',-16);
+  enter.append('circle').attr('class','markerCountBg').attr('cx',11).attr('cy',-18).attr('r',7.5);
+  enter.append('text').attr('class','markerCount').attr('x',11).attr('y',-18);
   const merged=enter.merge(markers);
   merged.attr('transform',d=>{
     const q=projection([d.lon,d.lat]);
@@ -192,12 +166,6 @@ document.addEventListener('pointerdown',event=>{
 });
 document.addEventListener('keydown',event=>{if(event.key==='Escape') closeCountryPopup()});
 countryPopup.addEventListener('pointerdown',event=>event.stopPropagation());
-window.addEventListener('resize',()=>{
-  if(activeCountryCode){
-    const group=countryGroups(latestPeople).find(g=>g.code===activeCountryCode);
-    if(group) positionCountryPopup(group);
-  }
-});
 
 async function refresh(){
   try{
