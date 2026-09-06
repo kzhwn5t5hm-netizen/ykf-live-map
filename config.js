@@ -120,6 +120,8 @@ window.YKF_CONFIG = {
   };
 
   window.addEventListener('DOMContentLoaded',()=>{
+    const brand=document.querySelector('.brand');
+    if(brand && brand.textContent.includes('ICESCO')) brand.innerHTML='YKF <span class="year">2026</span> Global Live Participant Map';
     const focus=document.querySelector('.focus');
     if(focus) focus.textContent='ICESCO FOCUS · LIVE WORLD MAP';
     const labels=document.querySelectorAll('.stat span');
