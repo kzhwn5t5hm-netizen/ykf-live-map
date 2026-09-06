@@ -121,14 +121,8 @@ window.YKF_CONFIG = {
 
   window.addEventListener('DOMContentLoaded',()=>{
     const focus=document.querySelector('.focus');
-    if(focus) focus.textContent='ICESCO FOCUS · 54 MEMBER STATES';
+    if(focus) focus.textContent='ICESCO FOCUS · LIVE WORLD MAP';
     const labels=document.querySelectorAll('.stat span');
-    if(labels[1]) labels[1].textContent='ICESCO member states';
-    const enforceMemberCount=()=>{
-      const el=document.getElementById('countries');
-      if(el) el.textContent='54';
-    };
-    enforceMemberCount();
-    setInterval(enforceMemberCount,500);
+    if(labels[1]) labels[1].textContent='TOTAL ONLINE COUNTRIES';
   });
 })();
