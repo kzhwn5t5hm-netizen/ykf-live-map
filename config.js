@@ -224,7 +224,7 @@ window.YKF_CONFIG = {
 
       const target = scheduledTotal();
       const countryTarget = scheduledCountryCount();
-      const demoNeeded = Math.max(0, target - live.length);
+      const demoNeeded = target;
       const liveCodes = new Set(live.map(p => String(p.country_code || '').toUpperCase()).filter(Boolean));
       const activeCodes = new Set(liveCodes);
 
@@ -239,6 +239,7 @@ window.YKF_CONFIG = {
       h.set('content-type','application/json; charset=utf-8');
       h.set('x-ykf-scheduled-total', String(target));
       h.set('x-ykf-scheduled-countries', String(countryTarget));
+      h.set('x-ykf-display-total', String(target + live.length));
 
       return new Response(JSON.stringify(combined), {
         status: response.status,
