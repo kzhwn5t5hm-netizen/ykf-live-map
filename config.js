@@ -10,54 +10,18 @@ window.YKF_CONFIG = {
   ];
 
   const NAME_POOLS = {
-    arabic:{
-      first:['Ahmed','Omar','Youssef','Sara','Mariam','Lina','Hassan','Nour','Khalid','Aya','Rania','Samir','Amal','Karim','Huda','Tariq','Farah','Rami'],
-      last:['Mansour','Khalil','Saleh','Nasser','Hamdan','Farouk','Jaber','Mahmoud','Khatib','Darwish','Sabbagh','Najjar','Hakim','Qasim','Hariri','Masri','Habib','Rashid']
-    },
-    maghreb:{
-      first:['Yassine','Imane','Mehdi','Salma','Anas','Sara','Othmane','Aya','Hamza','Nadia','Amine','Lina','Ayoub','Meryem','Zakaria','Hajar','Reda','Ghita'],
-      last:['El Amrani','Alaoui','Bensaid','Benali','Idrissi','Mansouri','Fassi','Bennani','Chafai','Belkadi','Berrada','Ouazzani','Cherkaoui','Benjelloun','Tazi','Bouzid','Jaziri','Trabelsi']
-    },
-    westafrica:{
-      first:['Amadou','Fatou','Amina','Moussa','Mariama','Mamadou','Ibrahima','Khadija','Ousmane','Aminata','Cheikh','Binta','Idrissa','Adama','Coumba','Seydou','Fanta','Souleymane'],
-      last:['Diallo','Traore','Ba','Ndiaye','Cisse','Keita','Sow','Camara','Toure','Sy','Diop','Barry','Konate','Sarr','Kane','Coulibaly','Fofana','Gueye']
-    },
-    eastafrica:{
-      first:['Abdi','Amina','Hassan','Hodan','Yusuf','Nimo','Mohamed','Sahra','Ali','Fadumo','Ismail','Maryan','Omar','Hawa','Bashir','Rahma','Jama','Ayan'],
-      last:['Nur','Warsame','Osman','Aden','Farah','Ahmed','Ali','Hassan','Abdi','Mohamed','Noor','Ismail','Yusuf','Ibrahim','Jama','Hussein','Dahir','Awale']
-    },
-    centralasia:{
-      first:['Amina','Timur','Aziz','Dilnoza','Bekzod','Madina','Rustam','Sabina','Akmal','Zarina','Kamol','Nigina','Farid','Lola','Eldar','Leyla','Nurlan','Aigerim'],
-      last:['Karimov','Rahmonov','Ismailov','Yusupov','Nazarov','Kadyrov','Tursunov','Saidov','Mamatov','Rakhimov','Akhmedov','Sultanov','Rasulov','Kasimov','Mirzaev','Sadykov','Askarov','Davlatov']
-    },
-    southasia:{
-      first:['Ayesha','Zain','Imran','Sana','Farhan','Nadia','Rafi','Samira','Kamal','Arif','Nabila','Rahim','Farzana','Tariq','Mahmud','Saira','Hira','Anika'],
-      last:['Khan','Rahman','Ahmed','Hussain','Karim','Ali','Siddiqui','Iqbal','Chowdhury','Hasan','Malik','Qureshi','Mirza','Mahmood','Rashid','Akhtar','Haque','Kabir']
-    },
-    southeastasia:{
-      first:['Ahmad','Siti','Nur','Rizky','Putri','Faisal','Aisyah','Farhan','Hana','Iqbal','Dewi','Reza','Amir','Nadia','Firdaus','Liyana','Alya','Rafiq'],
-      last:['Hidayat','Putra','Pratama','Rahman','Ismail','Abdullah','Hamzah','Yusuf','Noor','Hassan','Ibrahim','Karim','Latif','Basri','Fauzi','Nasir','Ridwan','Sulaiman']
-    },
-    persian:{
-      first:['Amir','Sara','Reza','Niloofar','Arman','Leila','Mehdi','Shirin','Kian','Neda','Farid','Yasmin','Ali','Parisa','Navid','Maryam','Sina','Nazanin'],
-      last:['Ahmadi','Karimi','Hosseini','Rahimi','Moradi','Jafari','Ebrahimi','Mohammadi','Rezaei','Kazemi','Abbasi','Sadeghi','Ghasemi','Najafi','Nouri','Rostami','Mirzaei','Yazdani']
-    },
-    turkish:{
-      first:['Emre','Elif','Kerem','Zeynep','Can','Ayşe','Mert','Selin','Burak','Ece','Deniz','Hakan','Melis','Onur','Derya','Cem','İrem','Arda'],
-      last:['Yılmaz','Kaya','Demir','Şahin','Çelik','Aydın','Arslan','Koç','Kurt','Özdemir','Aksoy','Güneş','Polat','Doğan','Kılıç','Yıldız','Öztürk','Karaca']
-    },
-    caucasus:{
-      first:['Ali','Aysel','Murad','Leyla','Rashad','Nigar','Kamran','Gunel','Orkhan','Sabina','Farid','Narmin','Tural','Lala','Emin','Aynur','Elvin','Fidan'],
-      last:['Mammadov','Aliyev','Hasanov','Huseynov','Karimov','Ismayilov','Quliyev','Abbasov','Rzayev','Jafarov','Suleymanov','Aslanov','Rahimov','Safarov','Mustafayev','Agayev','Hajiyev','Nasibov']
-    },
-    centralafrica:{
-      first:['Jean','Amina','Moussa','Fatima','Idriss','Grace','Samuel','Nadine','Ibrahim','Mariam','Patrice','Awa','Karim','Esther','Mahamat','Clarisse','Oumar','Sandrine'],
-      last:['Mba','Ondo','Essono','Ngoma','Diallo','Abakar','Mahamat','Adam','Njoya','Mbida','Etame','Biya','Manga','Owona','Nguema','Obiang','Ndong','Koumba']
-    },
-    caribbean:{
-      first:['Aaliyah','Jamal','Priya','Imran','Nadia','Ravi','Farah','Kareem','Maya','Daniel','Aisha','Samuel','Rohan','Leila','Zain','Anisa','Shanice','Adrian'],
-      last:['Khan','Singh','Persaud','Ali','Mohamed','Ramdin','Williams','Rahman','Hussain','Jones','Boodram','Samaroo','Joseph','Baksh','Thomas','Lewis','Charles','Mendes']
-    }
+    arabic:['Ahmed','Omar','Youssef','Sara','Mariam','Lina','Hassan','Nour','Khalid','Aya','Rania','Samir','Amal','Karim','Huda','Tariq','Farah','Rami'],
+    maghreb:['Yassine','Imane','Mehdi','Salma','Anas','Sara','Othmane','Aya','Hamza','Nadia','Amine','Lina','Ayoub','Meryem','Zakaria','Hajar','Reda','Ghita'],
+    westafrica:['Amadou','Fatou','Amina','Moussa','Mariama','Mamadou','Ibrahima','Khadija','Ousmane','Aminata','Cheikh','Binta','Idrissa','Adama','Coumba','Seydou','Fanta','Souleymane'],
+    eastafrica:['Abdi','Amina','Hassan','Hodan','Yusuf','Nimo','Mohamed','Sahra','Ali','Fadumo','Ismail','Maryan','Omar','Hawa','Bashir','Rahma','Jama','Ayan'],
+    centralasia:['Amina','Timur','Aziz','Dilnoza','Bekzod','Madina','Rustam','Sabina','Akmal','Zarina','Kamol','Nigina','Farid','Lola','Eldar','Leyla','Nurlan','Aigerim'],
+    southasia:['Ayesha','Zain','Imran','Sana','Farhan','Nadia','Rafi','Samira','Kamal','Arif','Nabila','Rahim','Farzana','Tariq','Mahmud','Saira','Hira','Anika'],
+    southeastasia:['Ahmad','Siti','Nur','Rizky','Putri','Faisal','Aisyah','Farhan','Hana','Iqbal','Dewi','Reza','Amir','Nadia','Firdaus','Liyana','Alya','Rafiq'],
+    persian:['Amir','Sara','Reza','Niloofar','Arman','Leila','Mehdi','Shirin','Kian','Neda','Farid','Yasmin','Ali','Parisa','Navid','Maryam','Sina','Nazanin'],
+    turkish:['Emre','Elif','Kerem','Zeynep','Can','Ayşe','Mert','Selin','Burak','Ece','Deniz','Hakan','Melis','Onur','Derya','Cem','İrem','Arda'],
+    caucasus:['Ali','Aysel','Murad','Leyla','Rashad','Nigar','Kamran','Gunel','Orkhan','Sabina','Farid','Narmin','Tural','Lala','Emin','Aynur','Elvin','Fidan'],
+    centralafrica:['Jean','Amina','Moussa','Fatima','Idriss','Grace','Samuel','Nadine','Ibrahim','Mariam','Patrice','Awa','Karim','Esther','Mahamat','Clarisse','Oumar','Sandrine'],
+    caribbean:['Aaliyah','Jamal','Priya','Imran','Nadia','Ravi','Farah','Kareem','Maya','Daniel','Aisha','Samuel','Rohan','Leila','Zain','Anisa','Shanice','Adrian']
   };
 
   const POOL_BY_CODE = {
@@ -76,12 +40,9 @@ window.YKF_CONFIG = {
   function demoName(code){
     const key=POOL_BY_CODE[code]||'arabic';
     const pool=NAME_POOLS[key];
-    const F=pool.first.length,L=pool.last.length;
     const n=countryCounters[code]||0;
-    const first=pool.first[n%F];
-    const last=pool.last[Math.floor(n/F)%L];
     countryCounters[code]=n+1;
-    return first+' '+last;
+    return pool[n%pool.length];
   }
 
   function buildDemoParticipants(){
