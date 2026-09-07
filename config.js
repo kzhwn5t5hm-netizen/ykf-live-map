@@ -9,37 +9,67 @@ window.YKF_CONFIG = {
     {code:'AZ',name:'Azerbaijan',lat:40.5,lon:47.5},{code:'JO',name:'Jordan',lat:31,lon:36},{code:'AF',name:'Afghanistan',lat:33,lon:65},{code:'AE',name:'United Arab Emirates',lat:24,lon:54},{code:'ID',name:'Indonesia',lat:-5,lon:120},{code:'UZ',name:'Uzbekistan',lat:41,lon:64},{code:'UG',name:'Uganda',lat:1,lon:32},{code:'IR',name:'Iran',lat:32,lon:53},{code:'PK',name:'Pakistan',lat:30,lon:70},{code:'BH',name:'Bahrain',lat:26,lon:50.55},{code:'BN',name:'Brunei',lat:4.5,lon:114.67},{code:'BD',name:'Bangladesh',lat:24,lon:90},{code:'BJ',name:'Benin',lat:9.5,lon:2.25},{code:'BF',name:'Burkina Faso',lat:13,lon:-2},{code:'TJ',name:'Tajikistan',lat:39,lon:71},{code:'TR',name:'Türkiye',lat:39,lon:35},{code:'TD',name:'Chad',lat:15,lon:19},{code:'TG',name:'Togo',lat:8,lon:1.17},{code:'TN',name:'Tunisia',lat:34,lon:9},{code:'DZ',name:'Algeria',lat:28,lon:3},{code:'DJ',name:'Djibouti',lat:11.5,lon:43},{code:'SA',name:'Saudi Arabia',lat:25,lon:45},{code:'SD',name:'Sudan',lat:15,lon:30},{code:'SR',name:'Suriname',lat:4,lon:-56},{code:'SY',name:'Syria',lat:35,lon:38},{code:'SL',name:'Sierra Leone',lat:8.5,lon:-11.5},{code:'SN',name:'Senegal',lat:14,lon:-14},{code:'SO',name:'Somalia',lat:10,lon:49},{code:'IQ',name:'Iraq',lat:33,lon:44},{code:'OM',name:'Oman',lat:21,lon:57},{code:'GA',name:'Gabon',lat:-1,lon:11.75},{code:'GM',name:'Gambia',lat:13.47,lon:-16.57},{code:'GY',name:'Guyana',lat:5,lon:-59},{code:'GN',name:'Guinea',lat:11,lon:-10},{code:'GW',name:'Guinea-Bissau',lat:12,lon:-15},{code:'PS',name:'Palestine',lat:31.9,lon:35.1},{code:'KZ',name:'Kazakhstan',lat:48,lon:68},{code:'QA',name:'Qatar',lat:25.5,lon:51.25},{code:'KM',name:'Comoros',lat:-12.17,lon:44.25},{code:'KG',name:'Kyrgyzstan',lat:41,lon:75},{code:'CM',name:'Cameroon',lat:6,lon:12},{code:'CI',name:'Côte d’Ivoire',lat:8,lon:-5},{code:'KW',name:'Kuwait',lat:29.5,lon:45.75},{code:'LB',name:'Lebanon',lat:33.83,lon:35.83},{code:'LY',name:'Libya',lat:25,lon:17},{code:'MV',name:'Maldives',lat:3.25,lon:73},{code:'ML',name:'Mali',lat:17,lon:-4},{code:'MY',name:'Malaysia',lat:2.5,lon:112.5},{code:'EG',name:'Egypt',lat:27,lon:30},{code:'MA',name:'Morocco',lat:32,lon:-5},{code:'MR',name:'Mauritania',lat:20,lon:-12},{code:'NE',name:'Niger',lat:16,lon:8},{code:'NG',name:'Nigeria',lat:10,lon:8},{code:'YE',name:'Yemen',lat:15,lon:48}
   ];
 
-  const NAME_POOLS = {
-    arabic:['Ahmed','Omar','Youssef','Sara','Mariam','Lina','Hassan','Nour','Khalid','Aya','Rania','Samir','Amal','Karim','Huda','Tariq','Farah','Rami'],
-    maghreb:['Yassine','Imane','Mehdi','Salma','Anas','Sara','Othmane','Aya','Hamza','Nadia','Amine','Lina','Ayoub','Meryem','Zakaria','Hajar','Reda','Ghita'],
-    westafrica:['Amadou','Fatou','Amina','Moussa','Mariama','Mamadou','Ibrahima','Khadija','Ousmane','Aminata','Cheikh','Binta','Idrissa','Adama','Coumba','Seydou','Fanta','Souleymane'],
-    eastafrica:['Abdi','Amina','Hassan','Hodan','Yusuf','Nimo','Mohamed','Sahra','Ali','Fadumo','Ismail','Maryan','Omar','Hawa','Bashir','Rahma','Jama','Ayan'],
-    centralasia:['Amina','Timur','Aziz','Dilnoza','Bekzod','Madina','Rustam','Sabina','Akmal','Zarina','Kamol','Nigina','Farid','Lola','Eldar','Leyla','Nurlan','Aigerim'],
-    southasia:['Ayesha','Zain','Imran','Sana','Farhan','Nadia','Rafi','Samira','Kamal','Arif','Nabila','Rahim','Farzana','Tariq','Mahmud','Saira','Hira','Anika'],
-    southeastasia:['Ahmad','Siti','Nur','Rizky','Putri','Faisal','Aisyah','Farhan','Hana','Iqbal','Dewi','Reza','Amir','Nadia','Firdaus','Liyana','Alya','Rafiq'],
-    persian:['Amir','Sara','Reza','Niloofar','Arman','Leila','Mehdi','Shirin','Kian','Neda','Farid','Yasmin','Ali','Parisa','Navid','Maryam','Sina','Nazanin'],
-    turkish:['Emre','Elif','Kerem','Zeynep','Can','Ayşe','Mert','Selin','Burak','Ece','Deniz','Hakan','Melis','Onur','Derya','Cem','İrem','Arda'],
-    caucasus:['Ali','Aysel','Murad','Leyla','Rashad','Nigar','Kamran','Gunel','Orkhan','Sabina','Farid','Narmin','Tural','Lala','Emin','Aynur','Elvin','Fidan'],
-    centralafrica:['Jean','Amina','Moussa','Fatima','Idriss','Grace','Samuel','Nadine','Ibrahim','Mariam','Patrice','Awa','Karim','Esther','Mahamat','Clarisse','Oumar','Sandrine'],
-    caribbean:['Aaliyah','Jamal','Priya','Imran','Nadia','Ravi','Farah','Kareem','Maya','Daniel','Aisha','Samuel','Rohan','Leila','Zain','Anisa','Shanice','Adrian']
-  };
-
-  const POOL_BY_CODE = {
-    MA:'maghreb',DZ:'maghreb',TN:'maghreb',MR:'maghreb',
-    BJ:'westafrica',BF:'westafrica',TG:'westafrica',SL:'westafrica',SN:'westafrica',GM:'westafrica',GN:'westafrica',GW:'westafrica',CI:'westafrica',ML:'westafrica',NE:'westafrica',NG:'westafrica',
-    UG:'eastafrica',DJ:'eastafrica',SO:'eastafrica',KM:'eastafrica',
-    TD:'centralafrica',GA:'centralafrica',CM:'centralafrica',
-    UZ:'centralasia',TJ:'centralasia',KZ:'centralasia',KG:'centralasia',
-    AF:'southasia',PK:'southasia',BD:'southasia',MV:'southasia',
-    ID:'southeastasia',BN:'southeastasia',MY:'southeastasia',
-    IR:'persian',TR:'turkish',AZ:'caucasus',SR:'caribbean',GY:'caribbean'
+  const COUNTRY_NAMES = {
+    AZ:['Ali','Aysel','Murad','Leyla','Rashad','Nigar','Kamran','Fidan'],
+    JO:['Ahmad','Omar','Yazan','Laith','Lina','Dana','Noor','Rania'],
+    AF:['Ahmad','Farid','Hamid','Zahir','Laila','Mariam','Soraya','Najib'],
+    AE:['Khalid','Hamad','Saeed','Rashid','Fatima','Aisha','Noura','Hessa'],
+    ID:['Ahmad','Rizky','Putri','Siti','Aisyah','Fajar','Dewi','Arif'],
+    UZ:['Aziz','Bekzod','Dilnoza','Madina','Akmal','Shahnoza','Jasur','Malika'],
+    UG:['Amina','Moses','Grace','Samuel','Fatuma','Ibrahim','Sarah','Joseph'],
+    IR:['Amir','Reza','Niloofar','Leila','Arman','Shirin','Kian','Neda'],
+    PK:['Ayesha','Zain','Imran','Sana','Farhan','Hira','Bilal','Mahnoor'],
+    BH:['Ahmed','Ali','Hassan','Fatima','Maryam','Noor','Salman','Hessa'],
+    BN:['Haziq','Nur','Aisyah','Firdaus','Hakim','Nabila','Syafiq','Liyana'],
+    BD:['Arif','Nabila','Rahim','Farzana','Mahmud','Nusrat','Hasan','Sumaiya'],
+    BJ:['Aicha','Idriss','Mariam','Karim','Fatou','Moussa','Awa','Abdou'],
+    BF:['Adama','Awa','Issa','Mariam','Ousmane','Fatimata','Souleymane','Safiatou'],
+    TJ:['Farrukh','Parvina','Rustam','Zebo','Kamol','Nigina','Behruz','Sitora'],
+    TR:['Emre','Elif','Kerem','Zeynep','Can','Ayşe','Mert','Selin'],
+    TD:['Mahamat','Amina','Idriss','Mariam','Abakar','Hawa','Moussa','Fatima'],
+    TG:['Kossi','Ama','Komlan','Akossiwa','Kodjo','Yawa','Sena','Mawuli'],
+    TN:['Yassine','Ines','Aziz','Mariem','Ahmed','Ons','Amine','Emna'],
+    DZ:['Yacine','Amel','Sofiane','Imane','Karim','Samira','Nabil','Nesrine'],
+    DJ:['Hassan','Amina','Ismail','Hodan','Ali','Rahma','Yusuf','Sahra'],
+    SA:['Abdullah','Mohammed','Faisal','Khalid','Sara','Reem','Noura','Hessa'],
+    SD:['Ahmed','Mustafa','Sara','Hiba','Mohamed','Amal','Omer','Rania'],
+    SR:['Ravi','Priya','Rajiv','Asha','Imran','Nadia','Rohan','Maya'],
+    SY:['Omar','Yazan','Rami','Lina','Noor','Hala','Fadi','Reem'],
+    SL:['Mohamed','Fatmata','Ibrahim','Hawa','Alhaji','Mariama','Sorie','Isata'],
+    SN:['Amadou','Fatou','Mamadou','Aminata','Cheikh','Awa','Ousmane','Ndeye'],
+    SO:['Abdi','Hodan','Yusuf','Nimo','Mohamed','Sahra','Ismail','Fadumo'],
+    IQ:['Ali','Mustafa','Zainab','Noor','Hassan','Sara','Ahmed','Rania'],
+    OM:['Ahmed','Salim','Nasser','Aisha','Maryam','Hamad','Noura','Khalid'],
+    GA:['Jean','Nadine','Alain','Aicha','Brice','Mireille','Patrick','Estelle'],
+    GM:['Lamin','Fatou','Ebrima','Mariama','Momodou','Isatou','Ousman','Binta'],
+    GY:['Ravi','Asha','Dev','Priya','Imran','Nadia','Rohan','Maya'],
+    GN:['Mamadou','Fatoumata','Ibrahima','Aissatou','Alpha','Mariama','Ousmane','Kadiatou'],
+    GW:['Mamadu','Binta','Braima','Fatumata','Umaro','Mariama','Idrissa','Aissatu'],
+    PS:['Omar','Lina','Yazan','Noor','Ahmad','Mariam','Tareq','Hala'],
+    KZ:['Nurlan','Aigerim','Daniyar','Madina','Azamat','Dana','Timur','Sabina'],
+    QA:['Hamad','Khalid','Nasser','Noor','Hessa','Mohammed','Dana','Reem'],
+    KM:['Ahmed','Fatima','Said','Mariama','Ali','Amina','Youssouf','Salima'],
+    KG:['Azamat','Aizada','Nurbek','Aigul','Bakyt','Meerim','Timur','Cholpon'],
+    CM:['Jean','Amina','Samuel','Nadine','Ibrahim','Grace','Alain','Mireille'],
+    CI:['Yao','Awa','Koffi','Aminata','Adama','Fatou','Serge','Mariam'],
+    KW:['Abdullah','Fahad','Khaled','Fatima','Noura','Yousef','Maryam','Bader'],
+    LB:['Jad','Rami','Karim','Maya','Lara','Nour','Tarek','Rima'],
+    LY:['Ahmed','Omar','Mariam','Huda','Ali','Salma','Youssef','Rania'],
+    MV:['Ahmed','Aishath','Mohamed','Mariyam','Hassan','Aminath','Ali','Fathimath'],
+    ML:['Amadou','Awa','Mamadou','Aminata','Moussa','Fatoumata','Seydou','Mariam'],
+    MY:['Aiman','Nur','Hakim','Aisyah','Firdaus','Nabila','Syafiq','Liyana'],
+    EG:['Ahmed','Mohamed','Omar','Mariam','Youssef','Salma','Karim','Nour'],
+    MA:['Yassine','Salma','Mehdi','Imane','Anas','Aya','Hamza','Meryem'],
+    MR:['Mohamed','Mariem','Ahmed','Aicha','Cheikh','Khadija','Sidi','Fatimetou'],
+    NE:['Amadou','Amina','Moussa','Fatou','Issa','Mariama','Abdou','Hadiza'],
+    NG:['Chinedu','Aisha','Tunde','Fatima','Emeka','Zainab','Ibrahim','Ada'],
+    YE:['Ahmed','Mohammed','Aisha','Mariam','Khaled','Huda','Ali','Reem']
   };
 
   const countryCounters = Object.create(null);
 
   function demoName(code){
-    const key=POOL_BY_CODE[code]||'arabic';
-    const pool=NAME_POOLS[key];
+    const pool=COUNTRY_NAMES[code]||['Ahmed','Sara','Omar','Mariam'];
     const n=countryCounters[code]||0;
     countryCounters[code]=n+1;
     return pool[n%pool.length];
