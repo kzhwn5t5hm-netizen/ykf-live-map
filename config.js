@@ -192,5 +192,9 @@ window.YKF_CONFIG = {
     if(focus) focus.textContent = 'ICESCO FOCUS · LIVE WORLD MAP';
     const labels = document.querySelectorAll('.stat span');
     if(labels[1]) labels[1].textContent = 'TOTAL ONLINE COUNTRIES';
+
+    if(!location.pathname.endsWith('/join.html')){
+      setTimeout(() => location.reload(), 5 * 60 * 1000);
+    }
   });
 })();
