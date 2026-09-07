@@ -71,32 +71,17 @@ window.YKF_CONFIG = {
     IR:'persian',TR:'turkish',AZ:'caucasus',SR:'caribbean',GY:'caribbean'
   };
 
-  const usedNames = new Set();
-  const poolCounters = Object.create(null);
+  const countryCounters = Object.create(null);
 
   function demoName(code){
     const key=POOL_BY_CODE[code]||'arabic';
     const pool=NAME_POOLS[key];
     const F=pool.first.length,L=pool.last.length;
-    let n=poolCounters[key]||0;
-    const capacity=F*F*L;
-    while(n<capacity){
-      const a=n%F;
-      let b=Math.floor(n/F)%F;
-      const c=Math.floor(n/(F*F))%L;
-      n++;
-      if(b===a) b=(b+1)%F;
-      const name=pool.first[a]+' '+pool.first[b]+' '+pool.last[c];
-      if(!usedNames.has(name)){
-        usedNames.add(name);
-        poolCounters[key]=n;
-        return name;
-      }
-    }
-    const fallback=pool.first[n%F]+' '+pool.last[n%L]+' '+String(n+1);
-    poolCounters[key]=n+1;
-    usedNames.add(fallback);
-    return fallback;
+    const n=countryCounters[code]||0;
+    const first=pool.first[n%F];
+    const last=pool.last[Math.floor(n/F)%L];
+    countryCounters[code]=n+1;
+    return first+' '+last;
   }
 
   function buildDemoParticipants(){
