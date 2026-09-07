@@ -6,14 +6,23 @@ window.YKF_CONFIG = {
 (() => {
   const EVENT_DATE = '2026-09-07';
   const EVENT_TIME_ZONE = 'Africa/Casablanca';
-  const START_HOUR = 7;
+  const START_HOUR = 8;
   const END_HOUR = 15;
-  const START_TOTAL = 800;
-  const END_TOTAL = 15000;
+  const START_TOTAL = 400;
+  const END_TOTAL = 18000;
   const MAX_DEMO_TOTAL = END_TOTAL;
-  const HOURLY_STEP = (END_TOTAL - START_TOTAL) / (END_HOUR - START_HOUR); // 1775
   const START_COUNTRIES = 20;
   const END_COUNTRIES = 54;
+  const PARTICIPANT_SCHEDULE = {
+    8: 400,
+    9: 600,
+    10: 7000,
+    11: 10000,
+    12: 15000,
+    13: 16450,
+    14: 17225,
+    15: 18000
+  };
 
   const ICESCO = [
     {code:'AZ',name:'Azerbaijan',lat:40.5,lon:47.5},{code:'JO',name:'Jordan',lat:31,lon:36},{code:'AF',name:'Afghanistan',lat:33,lon:65},{code:'AE',name:'United Arab Emirates',lat:24,lon:54},{code:'ID',name:'Indonesia',lat:-5,lon:120},{code:'UZ',name:'Uzbekistan',lat:41,lon:64},{code:'UG',name:'Uganda',lat:1,lon:32},{code:'IR',name:'Iran',lat:32,lon:53},{code:'PK',name:'Pakistan',lat:30,lon:70},{code:'BH',name:'Bahrain',lat:26,lon:50.55},{code:'BN',name:'Brunei',lat:4.5,lon:114.67},{code:'BD',name:'Bangladesh',lat:24,lon:90},{code:'BJ',name:'Benin',lat:9.5,lon:2.25},{code:'BF',name:'Burkina Faso',lat:13,lon:-2},{code:'TJ',name:'Tajikistan',lat:39,lon:71},{code:'TR',name:'Türkiye',lat:39,lon:35},{code:'TD',name:'Chad',lat:15,lon:19},{code:'TG',name:'Togo',lat:8,lon:1.17},{code:'TN',name:'Tunisia',lat:34,lon:9},{code:'DZ',name:'Algeria',lat:28,lon:3},{code:'DJ',name:'Djibouti',lat:11.5,lon:43},{code:'SA',name:'Saudi Arabia',lat:25,lon:45},{code:'SD',name:'Sudan',lat:15,lon:30},{code:'SR',name:'Suriname',lat:4,lon:-56},{code:'SY',name:'Syria',lat:35,lon:38},{code:'SL',name:'Sierra Leone',lat:8.5,lon:-11.5},{code:'SN',name:'Senegal',lat:14,lon:-14},{code:'SO',name:'Somalia',lat:10,lon:49},{code:'IQ',name:'Iraq',lat:33,lon:44},{code:'OM',name:'Oman',lat:21,lon:57},{code:'GA',name:'Gabon',lat:-1,lon:11.75},{code:'GM',name:'Gambia',lat:13.47,lon:-16.57},{code:'GY',name:'Guyana',lat:5,lon:-59},{code:'GN',name:'Guinea',lat:11,lon:-10},{code:'GW',name:'Guinea-Bissau',lat:12,lon:-15},{code:'PS',name:'Palestine',lat:31.9,lon:35.1},{code:'KZ',name:'Kazakhstan',lat:48,lon:68},{code:'QA',name:'Qatar',lat:25.5,lon:51.25},{code:'KM',name:'Comoros',lat:-12.17,lon:44.25},{code:'KG',name:'Kyrgyzstan',lat:41,lon:75},{code:'CM',name:'Cameroon',lat:6,lon:12},{code:'CI',name:'Côte d’Ivoire',lat:8,lon:-5},{code:'KW',name:'Kuwait',lat:29.5,lon:45.75},{code:'LB',name:'Lebanon',lat:33.83,lon:35.83},{code:'LY',name:'Libya',lat:25,lon:17},{code:'MV',name:'Maldives',lat:3.25,lon:73},{code:'ML',name:'Mali',lat:17,lon:-4},{code:'MY',name:'Malaysia',lat:2.5,lon:112.5},{code:'EG',name:'Egypt',lat:27,lon:30},{code:'MA',name:'Morocco',lat:32,lon:-5},{code:'MR',name:'Mauritania',lat:20,lon:-12},{code:'NE',name:'Niger',lat:16,lon:8},{code:'NG',name:'Nigeria',lat:10,lon:8},{code:'YE',name:'Yemen',lat:15,lon:48}
@@ -106,8 +115,7 @@ window.YKF_CONFIG = {
     if(now.date > EVENT_DATE) return END_TOTAL;
     if(now.hour < START_HOUR) return START_TOTAL;
     if(now.hour >= END_HOUR) return END_TOTAL;
-    const elapsedHours = now.hour - START_HOUR;
-    return Math.round(START_TOTAL + elapsedHours * HOURLY_STEP);
+    return PARTICIPANT_SCHEDULE[now.hour] ?? START_TOTAL;
   }
 
   function scheduledCountryCount(){
@@ -126,7 +134,8 @@ window.YKF_CONFIG = {
     for(let i=0;i<remaining;i++) counts[order[i].i]++;
 
     const people = [];
-    ICESCO.forEach((c,idx) => {
+    ICESCO.forEach(c => {
+      const idx = ICESCO.findIndex(x => x.code === c.code);
       const count = counts[idx];
       for(let j=0;j<count;j++){
         people.push({
@@ -137,7 +146,7 @@ window.YKF_CONFIG = {
           flag: '',
           lat: c.lat,
           lon: c.lon,
-          created_at: '2026-09-07T07:00:00+01:00',
+          created_at: '2026-09-07T08:00:00+01:00',
           __demo: true,
           __rank: (j + 0.5) / count
         });
@@ -149,7 +158,8 @@ window.YKF_CONFIG = {
     return people;
   }
 
-  const demoParticipants = buildDemoParticipants();
+  const isJoinPage = location.pathname.endsWith('/join.html');
+  const demoParticipants = isJoinPage ? [] : buildDemoParticipants();
   const demoByCountry = new Map(ICESCO.map(c => [c.code, demoParticipants.filter(p => p.country_code === c.code)]));
   const nativeFetch = window.fetch.bind(window);
 
@@ -192,7 +202,7 @@ window.YKF_CONFIG = {
     endHour: END_HOUR,
     startTotal: START_TOTAL,
     endTotal: END_TOTAL,
-    hourlyStep: HOURLY_STEP,
+    participantSchedule: {...PARTICIPANT_SCHEDULE},
     startCountries: START_COUNTRIES,
     endCountries: END_COUNTRIES,
     currentTotal: scheduledTotal,
@@ -204,7 +214,7 @@ window.YKF_CONFIG = {
     const method = String((init && init.method) || (input && input.method) || 'GET').toUpperCase();
     const response = await nativeFetch(input, init);
 
-    if(method !== 'GET' || !url.includes('/rest/v1/ykf_participants') || !response.ok){
+    if(isJoinPage || method !== 'GET' || !url.includes('/rest/v1/ykf_participants') || !response.ok){
       return response;
     }
 
@@ -250,7 +260,7 @@ window.YKF_CONFIG = {
     const labels = document.querySelectorAll('.stat span');
     if(labels[1]) labels[1].textContent = 'TOTAL ONLINE COUNTRIES';
 
-    if(!location.pathname.endsWith('/join.html')){
+    if(!isJoinPage){
       setTimeout(() => location.reload(), 5 * 60 * 1000);
     }
   });
