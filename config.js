@@ -4,15 +4,16 @@ window.YKF_CONFIG = {
 };
 
 (() => {
-  const EVENT_DATE = '2026-09-07';
+  const EVENT_DATE = '2026-09-08';
   const EVENT_TIME_ZONE = 'Africa/Casablanca';
   const START_HOUR = 8;
   const END_HOUR = 15;
   const START_TOTAL = 400;
   const END_TOTAL = 18000;
-  const MAX_DEMO_TOTAL = END_TOTAL;
   const START_COUNTRIES = 20;
   const END_COUNTRIES = 54;
+  const DEMO_PER_COUNTRY = 400;
+
   const PARTICIPANT_SCHEDULE = {
     8: 400,
     9: 600,
@@ -87,26 +88,24 @@ window.YKF_CONFIG = {
     YE:['Ahmed','Mohammed','Aisha','Mariam','Khaled','Huda','Ali','Reem']
   };
 
-  const countryCounters = Object.create(null);
-
-  function demoName(code){
-    const pool = COUNTRY_NAMES[code] || ['Ahmed','Sara','Omar','Mariam'];
-    const n = countryCounters[code] || 0;
-    countryCounters[code] = n + 1;
-    return pool[n % pool.length];
+  function dateInEventZone(value){
+    const d = value ? new Date(value) : null;
+    if(!d || Number.isNaN(d.getTime())) return '';
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: EVENT_TIME_ZONE,
+      year:'numeric',month:'2-digit',day:'2-digit'
+    }).formatToParts(d);
+    const get = type => parts.find(p => p.type === type)?.value || '';
+    return `${get('year')}-${get('month')}-${get('day')}`;
   }
 
   function casablancaNow(){
     const parts = new Intl.DateTimeFormat('en-CA', {
       timeZone: EVENT_TIME_ZONE,
-      year: 'numeric', month: '2-digit', day: '2-digit',
-      hour: '2-digit', hourCycle: 'h23'
+      year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'
     }).formatToParts(new Date());
     const get = type => parts.find(p => p.type === type)?.value || '';
-    return {
-      date: `${get('year')}-${get('month')}-${get('day')}`,
-      hour: Number(get('hour'))
-    };
+    return {date:`${get('year')}-${get('month')}-${get('day')}`,hour:Number(get('hour'))};
   }
 
   function scheduledTotal(){
@@ -120,149 +119,95 @@ window.YKF_CONFIG = {
 
   function scheduledCountryCount(){
     const total = scheduledTotal();
-    const progress = Math.max(0, Math.min(1, (total - START_TOTAL) / (END_TOTAL - START_TOTAL)));
-    return Math.round(START_COUNTRIES + progress * (END_COUNTRIES - START_COUNTRIES));
-  }
-
-  function buildDemoParticipants(){
-    const weights = ICESCO.map((_,i) => 85 + ((i * 47 + 13) % 101));
-    const weightTotal = weights.reduce((a,b) => a + b, 0);
-    const exact = weights.map(w => MAX_DEMO_TOTAL * w / weightTotal);
-    const counts = exact.map(Math.floor);
-    let remaining = MAX_DEMO_TOTAL - counts.reduce((a,b) => a + b, 0);
-    const order = exact.map((v,i) => ({i,f:v-Math.floor(v)})).sort((a,b) => b.f-a.f);
-    for(let i=0;i<remaining;i++) counts[order[i].i]++;
-
-    const people = [];
-    ICESCO.forEach(c => {
-      const idx = ICESCO.findIndex(x => x.code === c.code);
-      const count = counts[idx];
-      for(let j=0;j<count;j++){
-        people.push({
-          id: 0,
-          name: demoName(c.code),
-          country_code: c.code,
-          country_name: c.name,
-          flag: '',
-          lat: c.lat,
-          lon: c.lon,
-          created_at: '2026-09-07T08:00:00+01:00',
-          __demo: true,
-          __rank: (j + 0.5) / count
-        });
-      }
-    });
-
-    people.sort((a,b) => a.__rank - b.__rank || a.country_code.localeCompare(b.country_code));
-    people.forEach((p,i) => { p.id = -(i + 1); delete p.__rank; });
-    return people;
+    const progress = Math.max(0,Math.min(1,(total-START_TOTAL)/(END_TOTAL-START_TOTAL)));
+    return Math.round(START_COUNTRIES + progress*(END_COUNTRIES-START_COUNTRIES));
   }
 
   const isJoinPage = location.pathname.endsWith('/join.html');
-  const demoParticipants = isJoinPage ? [] : buildDemoParticipants();
-  const demoByCountry = new Map(ICESCO.map(c => [c.code, demoParticipants.filter(p => p.country_code === c.code)]));
-  const nativeFetch = window.fetch.bind(window);
+  const demoByCountry = new Map();
 
-  function selectDemoParticipants(totalNeeded, activeCodes){
-    if(totalNeeded <= 0) return [];
-    const demoCodes = COUNTRY_ACTIVATION_ORDER.filter(code => activeCodes.has(code));
-    if(!demoCodes.length) demoCodes.push('MA');
+  if(!isJoinPage){
+    ICESCO.forEach((c,idx) => {
+      const pool = COUNTRY_NAMES[c.code] || ['Ahmed','Sara','Omar','Mariam'];
+      const list = [];
+      for(let j=0;j<DEMO_PER_COUNTRY;j++){
+        list.push({
+          id: -(idx*DEMO_PER_COUNTRY+j+1),
+          name: pool[j%pool.length],
+          country_code:c.code,
+          country_name:c.name,
+          flag:'',lat:c.lat,lon:c.lon,
+          created_at:'2026-09-08T08:00:00+01:00',
+          __demo:true
+        });
+      }
+      demoByCountry.set(c.code,list);
+    });
+  }
 
-    const selected = [];
-    let row = 0;
-    while(selected.length < totalNeeded){
-      let added = false;
-      for(const code of demoCodes){
-        const list = demoByCountry.get(code) || [];
-        if(row < list.length){
+  function selectDemoParticipants(totalNeeded,codes){
+    if(totalNeeded<=0 || !codes.length) return [];
+    const selected=[];
+    let row=0;
+    while(selected.length<totalNeeded){
+      let added=false;
+      for(const code of codes){
+        const list=demoByCountry.get(code)||[];
+        if(row<list.length){
           selected.push(list[row]);
-          added = true;
-          if(selected.length >= totalNeeded) break;
+          added=true;
+          if(selected.length>=totalNeeded) break;
         }
       }
       if(!added) break;
       row++;
     }
-
-    if(selected.length < totalNeeded){
-      const selectedIds = new Set(selected.map(p => p.id));
-      for(const p of demoParticipants){
-        if(selectedIds.has(p.id)) continue;
-        selected.push(p);
-        if(selected.length >= totalNeeded) break;
-      }
-    }
     return selected;
   }
 
   window.YKF_EVENT_SCHEDULE = {
-    date: EVENT_DATE,
-    timeZone: EVENT_TIME_ZONE,
-    startHour: START_HOUR,
-    endHour: END_HOUR,
-    startTotal: START_TOTAL,
-    endTotal: END_TOTAL,
-    participantSchedule: {...PARTICIPANT_SCHEDULE},
-    startCountries: START_COUNTRIES,
-    endCountries: END_COUNTRIES,
-    currentTotal: scheduledTotal,
-    currentCountries: scheduledCountryCount
+    date:EVENT_DATE,timeZone:EVENT_TIME_ZONE,startHour:START_HOUR,endHour:END_HOUR,
+    startTotal:START_TOTAL,endTotal:END_TOTAL,participantSchedule:{...PARTICIPANT_SCHEDULE},
+    startCountries:START_COUNTRIES,endCountries:END_COUNTRIES,
+    currentTotal:scheduledTotal,currentCountries:scheduledCountryCount
   };
 
-  window.fetch = async function(input, init){
-    const url = typeof input === 'string' ? input : (input && input.url) || '';
-    const method = String((init && init.method) || (input && input.method) || 'GET').toUpperCase();
-    const response = await nativeFetch(input, init);
+  const nativeFetch = window.fetch.bind(window);
+  window.fetch = async function(input,init){
+    const url=typeof input==='string'?input:(input&&input.url)||'';
+    const method=String((init&&init.method)||(input&&input.method)||'GET').toUpperCase();
+    const response=await nativeFetch(input,init);
 
-    if(isJoinPage || method !== 'GET' || !url.includes('/rest/v1/ykf_participants') || !response.ok){
-      return response;
-    }
+    if(isJoinPage || method!=='GET' || !url.includes('/rest/v1/ykf_participants') || !response.ok) return response;
 
     try{
-      const live = await response.clone().json();
-      if(!Array.isArray(live)) return response;
+      const allLive=await response.clone().json();
+      if(!Array.isArray(allLive)) return response;
 
-      const target = scheduledTotal();
-      const countryTarget = scheduledCountryCount();
-      const demoNeeded = target;
-      const liveCodes = new Set(live.map(p => String(p.country_code || '').toUpperCase()).filter(Boolean));
-      const activeCodes = new Set(liveCodes);
-
-      for(const code of COUNTRY_ACTIVATION_ORDER){
-        if(activeCodes.size >= countryTarget) break;
-        activeCodes.add(code);
-      }
-
-      const demo = selectDemoParticipants(demoNeeded, activeCodes);
-      const combined = demo.concat(live);
-      const h = new Headers(response.headers);
+      const live=allLive.filter(p=>dateInEventZone(p.created_at)===EVENT_DATE);
+      const target=scheduledTotal();
+      const countryTarget=scheduledCountryCount();
+      const scheduledCodes=COUNTRY_ACTIVATION_ORDER.slice(0,countryTarget);
+      const demo=selectDemoParticipants(target,scheduledCodes);
+      const combined=demo.concat(live);
+      const h=new Headers(response.headers);
       h.set('content-type','application/json; charset=utf-8');
-      h.set('x-ykf-scheduled-total', String(target));
-      h.set('x-ykf-scheduled-countries', String(countryTarget));
-      h.set('x-ykf-display-total', String(target + live.length));
-
-      return new Response(JSON.stringify(combined), {
-        status: response.status,
-        statusText: response.statusText,
-        headers: h
-      });
+      h.set('x-ykf-scheduled-total',String(target));
+      h.set('x-ykf-scheduled-countries',String(countryTarget));
+      h.set('x-ykf-display-total',String(target+live.length));
+      return new Response(JSON.stringify(combined),{status:response.status,statusText:response.statusText,headers:h});
     }catch(_){
       return response;
     }
   };
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const brand = document.querySelector('.brand');
-    if(brand && brand.textContent.includes('ICESCO')){
-      brand.innerHTML = 'YKF <span class="year">2026</span> Global Live Participant Map';
-    }
-    const focus = document.querySelector('.focus');
-    if(focus) focus.textContent = 'ICESCO FOCUS · LIVE WORLD MAP';
-    const labels = document.querySelectorAll('.stat span');
-    if(labels[1]) labels[1].textContent = 'TOTAL ONLINE COUNTRIES';
-
-    if(!isJoinPage){
-      setTimeout(() => location.reload(), 5 * 60 * 1000);
-    }
+  window.addEventListener('DOMContentLoaded',()=>{
+    const brand=document.querySelector('.brand');
+    if(brand&&brand.textContent.includes('ICESCO')) brand.innerHTML='YKF <span class="year">2026</span> Global Live Participant Map';
+    const focus=document.querySelector('.focus');
+    if(focus) focus.textContent='ICESCO FOCUS · LIVE WORLD MAP';
+    const labels=document.querySelectorAll('.stat span');
+    if(labels[1]) labels[1].textContent='TOTAL ONLINE COUNTRIES';
+    if(!isJoinPage) setTimeout(()=>location.reload(),5*60*1000);
   });
 })();
